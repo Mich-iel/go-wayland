@@ -10,6 +10,22 @@ import "github.com/rajveermalviya/go-wayland/cmd/go-wayland-scanner"
 
 ## Index
 
+- [Variables](<#variables>)
+- [func comment\(s string\) string](<#comment>)
+- [func fmtFile\(b \[\]byte\) \[\]byte](<#fmtFile>)
+- [func getInputFile\(file string\) \(io.ReadCloser, error\)](<#getInputFile>)
+- [func hasDestructor\(v Interface\) bool](<#hasDestructor>)
+- [func init\(\)](<#init>)
+- [func isLocalInterface\(iface string\) bool](<#isLocalInterface>)
+- [func main\(\)](<#main>)
+- [func toCamel\(s string\) string](<#toCamel>)
+- [func toCamelPrefix\(s string, prefix string\) string](<#toCamelPrefix>)
+- [func toLowerCamel\(s string\) string](<#toLowerCamel>)
+- [func writeEnum\(w io.Writer, ifaceName string, e Enum\)](<#writeEnum>)
+- [func writeEvent\(w io.Writer, ifaceName string, e Event\)](<#writeEvent>)
+- [func writeEventDispatcher\(w io.Writer, ifaceName string, v Interface\)](<#writeEventDispatcher>)
+- [func writeInterface\(w io.Writer, v Interface\)](<#writeInterface>)
+- [func writeRequest\(w io.Writer, ifaceName string, opcode int, r Request\)](<#writeRequest>)
 - [type Arg](<#Arg>)
 - [type Description](<#Description>)
 - [type Entry](<#Entry>)
@@ -18,6 +34,169 @@ import "github.com/rajveermalviya/go-wayland/cmd/go-wayland-scanner"
 - [type Interface](<#Interface>)
 - [type Protocol](<#Protocol>)
 - [type Request](<#Request>)
+
+
+## Variables
+
+<a name="inputFile"></a>
+
+```go
+var (
+    inputFile   string
+    outputFile  string
+    packageName string
+    prefix      string
+    suffix      string
+)
+```
+
+<a name="typeToGoTypeMap"></a>
+
+```go
+var typeToGoTypeMap map[string]string = map[string]string{
+    "int":    "int32",
+    "uint":   "uint32",
+    "fixed":  "float64",
+    "string": "string",
+    "object": "Proxy",
+    "array":  "[]byte",
+    "fd":     "int",
+}
+```
+
+<a name="comment"></a>
+## func [comment](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L779>)
+
+```go
+func comment(s string) string
+```
+
+
+
+<a name="fmtFile"></a>
+## func [fmtFile](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L180>)
+
+```go
+func fmtFile(b []byte) []byte
+```
+
+
+
+<a name="getInputFile"></a>
+## func [getInputFile](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L167>)
+
+```go
+func getInputFile(file string) (io.ReadCloser, error)
+```
+
+
+
+<a name="hasDestructor"></a>
+## func [hasDestructor](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L792>)
+
+```go
+func hasDestructor(v Interface) bool
+```
+
+
+
+<a name="init"></a>
+## func [init](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L30>)
+
+```go
+func init()
+```
+
+
+
+<a name="isLocalInterface"></a>
+## func [isLocalInterface](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L802>)
+
+```go
+func isLocalInterface(iface string) bool
+```
+
+
+
+<a name="main"></a>
+## func [main](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L110>)
+
+```go
+func main()
+```
+
+
+
+<a name="toCamel"></a>
+## func [toCamel](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L757>)
+
+```go
+func toCamel(s string) string
+```
+
+
+
+<a name="toCamelPrefix"></a>
+## func [toCamelPrefix](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L765>)
+
+```go
+func toCamelPrefix(s string, prefix string) string
+```
+
+Same as toCamel but with custom prefix to trim
+
+<a name="toLowerCamel"></a>
+## func [toLowerCamel](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L771>)
+
+```go
+func toLowerCamel(s string) string
+```
+
+
+
+<a name="writeEnum"></a>
+## func [writeEnum](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L532>)
+
+```go
+func writeEnum(w io.Writer, ifaceName string, e Enum)
+```
+
+
+
+<a name="writeEvent"></a>
+## func [writeEvent](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L581>)
+
+```go
+func writeEvent(w io.Writer, ifaceName string, e Event)
+```
+
+
+
+<a name="writeEventDispatcher"></a>
+## func [writeEventDispatcher](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L631>)
+
+```go
+func writeEventDispatcher(w io.Writer, ifaceName string, v Interface)
+```
+
+
+
+<a name="writeInterface"></a>
+## func [writeInterface](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L215>)
+
+```go
+func writeInterface(w io.Writer, v Interface)
+```
+
+
+
+<a name="writeRequest"></a>
+## func [writeRequest](<https://github.com/Mich-iel/go-wayland/blob/main/cmd/go-wayland-scanner/scanner.go#L272>)
+
+```go
+func writeRequest(w io.Writer, ifaceName string, opcode int, r Request)
+```
+
 
 
 <a name="Arg"></a>
@@ -128,6 +307,12 @@ type Protocol struct {
     Copyright  string      `xml:"copyright"`
     Interfaces []Interface `xml:"interface"`
 }
+```
+
+<a name="protocol"></a>
+
+```go
+var protocol Protocol
 ```
 
 <a name="Request"></a>
